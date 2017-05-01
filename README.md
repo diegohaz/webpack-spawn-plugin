@@ -18,7 +18,7 @@ import SpawnPlugin from 'webpack-spawn-plugin'
 const config = {
   ...
   plugins: [
-    new SpawnPlugin('node', ['.'], { when: 'done', stdio: 'inherit' }) // when and done are defaults
+    new SpawnPlugin('node', ['.'], { when: 'done', stdio: 'inherit' }) // default values for `when` and `stdio`
   ]
 }
 ```
