@@ -47,6 +47,7 @@
     "webpack"
   ],
   "dependencies": {
+    "cross-spawn": "^5.1.0",
     "fkill": "^4.1.0"
   },
   "devDependencies": {

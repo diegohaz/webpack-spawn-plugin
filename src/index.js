@@ -1,5 +1,5 @@
 // @flow
-import { spawn } from 'child_process'
+import spawn from 'cross-spawn'
 import fkill from 'fkill'
 
 type Options = {
