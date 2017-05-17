@@ -1,11 +1,18 @@
 // @flow
 import spawn from 'cross-spawn'
+import taskkill from 'taskkill'
 import fkill from 'fkill'
 
 type Options = {
   when: string,
   stdio: string,
 }
+
+const kill = pid => (
+  process.platform === 'win32'
+    ? taskkill(pid, { force: true, tree: true })
+    : fkill(pid)
+)
 
 class SpawnPlugin {
   pid: any
@@ -23,7 +30,7 @@ class SpawnPlugin {
 
   apply(compiler: any) {
     compiler.plugin(this.when, () => {
-      const promise = this.pid ? fkill(this.pid) : Promise.resolve()
+      const promise = this.pid ? kill(this.pid) : Promise.resolve()
       const doSpawn = () => {
         const server = spawn(...this.args)
         this.pid = server.pid

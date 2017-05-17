@@ -48,7 +48,8 @@
   ],
   "dependencies": {
     "cross-spawn": "^5.1.0",
-    "fkill": "^4.1.0"
+    "fkill": "^4.1.0",
+    "taskkill": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
