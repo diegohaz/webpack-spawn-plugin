@@ -1,6 +1,6 @@
 {
   "name": "webpack-spawn-plugin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A webpack plugin that runs child_process.spawn within compilation",
   "license": "MIT",
   "repository": "diegohaz/webpack-spawn-plugin",
