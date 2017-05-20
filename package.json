@@ -48,7 +48,7 @@
   ],
   "dependencies": {
     "cross-spawn": "^5.1.0",
-    "fkill": "^4.1.0",
+    "fkill": "^5.0.0",
     "taskkill": "^2.0.0"
   },
   "devDependencies": {
