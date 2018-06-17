@@ -29,7 +29,7 @@ class SpawnPlugin {
   }
 
   apply(compiler: any) {
-    compiler.plugin(this.when, () => {
+    compiler.hooks[this.when].tap({ name: 'webpack-spawn-plugin' }, () => {
       const promise = this.pid ? kill(this.pid) : Promise.resolve()
       const doSpawn = () => {
         const server = spawn(...this.args)
