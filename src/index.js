@@ -39,7 +39,7 @@ class SpawnPlugin {
         if (this.persistent) {
           return
         }
-        promise = fkill(this.pid)
+        promise = fkill(this.pid, { force: true })
       }
       const doSpawn = () => {
         const server = spawn(...this.args)
