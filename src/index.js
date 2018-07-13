@@ -10,8 +10,11 @@ type Options = {
 
 class SpawnPlugin {
   pid: any
+
   when: string
+
   persistent: boolean
+
   args: any[]
 
   constructor(
