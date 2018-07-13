@@ -4,18 +4,17 @@
   "description": "A webpack plugin that runs child_process.spawn within compilation",
   "license": "MIT",
   "repository": "diegohaz/webpack-spawn-plugin",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": {
     "name": "Diego Haz",
     "email": "hazdiego@gmail.com",
-    "url": "github.com/diegohaz"
+    "url": "https://github.com/diegohaz"
   },
   "engines": {
     "node": ">=6"
   },
   "files": [
-    "dist",
-    "index.js"
+    "dist"
   ],
   "scripts": {
     "test": "jest",
@@ -26,11 +25,8 @@
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
     "build": "babel src -d dist",
-    "watch": "npm-watch",
-    "patch": "npm version patch && npm publish",
-    "minor": "npm version minor && npm publish",
-    "major": "npm version major && npm publish",
-    "prepublish": "npm run lint && npm test && npm run build",
+    "preversion": "npm run lint && npm test && npm run build",
+    "version": "standard-changelog && git add CHANGELOG.md",
     "postpublish": "git push origin master --follow-tags"
   },
   "watch": {
@@ -64,8 +60,8 @@
     "eslint-plugin-import": "^2.12.0",
     "flow-bin": "^0.74.0",
     "jest-cli": "^23.1.0",
-    "npm-watch": "^0.3.0",
     "opn-cli": "^3.1.0",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "standard-changelog": "^2.0.0"
   }
 }
